@@ -1,9 +1,9 @@
-using System;
 using DebugWorkshop2022_3.Services;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace WeatherForecastTests
 {
+    [TestClass]
     public class WeatherServiceTests
     {
         private readonly WeatherService _service;
@@ -12,22 +12,22 @@ namespace WeatherForecastTests
             _service = new WeatherService();
         }
 
-        [Fact]
+        [TestMethod]
         public void ThereShouldBe100InTotal()
         {
-            Assert.Equal(100, _service.GetAllForecasts().Count);
+            Assert.AreEqual(100, _service.GetAllForecasts().Count);
         }
 
-        [Fact]
+        [TestMethod]
         public void ThereShouldBe50Odds()
         {
-            Assert.Equal(50, _service.GetAllOdds().Count);
+            Assert.AreEqual(50, _service.GetAllOdds().Count);
         }
 
-        [Fact]
+        [TestMethod]
         public void ThereShouldBe50Evens()
         {
-            Assert.Equal(50, _service.GetAllEvens().Count);
+            Assert.AreEqual(50, _service.GetAllEvens().Count);
         }
     }
 }
